@@ -1,9 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  export let pathname = '';
-  export let userAgent = '';
-
   let Route: any;
 
   const calc = async (type: string) => {
@@ -15,8 +12,12 @@
   };
 
   onMount(() => {
-    // console.log(pathname, userAgent);
-    calc('a');
+    const pathname = location.pathname;
+    const userAgent = navigator.userAgent;
+
+    console.log(pathname, userAgent);
+
+    calc(pathname.includes('a') ? '' : 'no');
   });
 </script>
 
