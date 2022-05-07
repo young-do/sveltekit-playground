@@ -11,11 +11,7 @@ const config = {
   kit: {
     adapter: adapter(),
     vite: {
-      plugins: [
-        unocss({
-          mode: 'dist-chunk'
-        })
-      ]
+      plugins: [unocss()]
     }
   }
 };
